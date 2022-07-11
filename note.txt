@@ -1,0 +1,26 @@
+$go mod init gin-practice
+$go get -u github.com/gin-gonic/gin
+Tạo main.go -> có hàm main() làm endpoint để chạy
+Tạo thử router trước => ping pong
+Xác định các route cần thiết
+[POST]  /product
+[GET]   /product
+[GET]   /product/:id
+Tạo folder controllers và các controllers cần thiết
+Tạo các func làm việc với CRUD -> cứ cho trả tạm về String(200,"test") để check trước rồi build sau
+Sau khi có controllers, import nó vào main, nhớ group các router
+Tạo model -> nhớ `jsson và bsson`
+Kết nối mongo với gin
+Tạo thêm folder services, chứa service để connect và disconect với mongo
+Quay lại main.go để gọi hàm connect từ package services và dùng thêm defer() để disconnect nó
+Tiến hành làm việc với controllers, triển khai tương tác với db
+Ở phần create, sử dụng thêm uuid để tạo id
+Ở phần get, có thêm cái get slug để lấy nó, dùng ctx.Param
+Với phần query, ta có cái defaultquery của ctx hỗ trợ, ngoài ra việc tìm thì có thêm mấy cái bsson gì đó
+Tiến hành validator, tạo folder validator, tạo hàm validate với tham số truyền vào là fl validator.FieldLevel
+Sau khi impl xong, viết vào hàm main với syntax tham khảo ở doc, rồi vô model thêm tag binding
+Đến phần middlewware
+
+
+
+Chiến ở jwtAuth trước -> auth middlewware
